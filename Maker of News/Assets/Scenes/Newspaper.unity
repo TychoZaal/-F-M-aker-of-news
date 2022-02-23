@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 79920736}
   - component: {fileID: 79920735}
   - component: {fileID: 79920734}
+  - component: {fileID: 79920738}
   m_Layer: 5
   m_Name: TopPage
   m_TagString: Untagged
@@ -186,10 +187,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1687258583}
-        m_TargetAssemblyTypeName: CameraMovement, Assembly-CSharp
-        m_MethodName: ZoomIn
-        m_Mode: 5
+      - m_Target: {fileID: 79920738}
+        m_TargetAssemblyTypeName: NewspaperButton, Assembly-CSharp
+        m_MethodName: ButtonPressed
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -255,6 +256,21 @@ RectTransform:
   m_AnchoredPosition: {x: 4.5337, y: 456.4848}
   m_SizeDelta: {x: 98.721, y: 97.2}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &79920738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 79920733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8462a380b47d0934388a9fde78ba0dec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 1687258583}
+  cameraZoomedPosition: {x: 0, y: 406, z: -1202}
+  focus: 1
 --- !u!1 &97249501
 GameObject:
   m_ObjectHideFlags: 0
@@ -342,6 +358,7 @@ GameObject:
   - component: {fileID: 346277495}
   - component: {fileID: 346277494}
   - component: {fileID: 346277493}
+  - component: {fileID: 346277496}
   m_Layer: 5
   m_Name: BottomLeft
   m_TagString: Untagged
@@ -412,10 +429,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1687258583}
-        m_TargetAssemblyTypeName: CameraMovement, Assembly-CSharp
-        m_MethodName: ZoomIn
-        m_Mode: 5
+      - m_Target: {fileID: 346277496}
+        m_TargetAssemblyTypeName: NewspaperButton, Assembly-CSharp
+        m_MethodName: ButtonPressed
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -462,6 +479,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 346277491}
   m_CullTransparentMesh: 1
+--- !u!114 &346277496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 346277491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8462a380b47d0934388a9fde78ba0dec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 1687258583}
+  cameraZoomedPosition: {x: -182, y: -515, z: -554}
+  focus: 4
 --- !u!1 &400810767
 GameObject:
   m_ObjectHideFlags: 0
@@ -474,6 +506,7 @@ GameObject:
   - component: {fileID: 400810771}
   - component: {fileID: 400810770}
   - component: {fileID: 400810769}
+  - component: {fileID: 400810772}
   m_Layer: 5
   m_Name: TopLeft
   m_TagString: Untagged
@@ -544,10 +577,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1687258583}
-        m_TargetAssemblyTypeName: CameraMovement, Assembly-CSharp
-        m_MethodName: ZoomIn
-        m_Mode: 5
+      - m_Target: {fileID: 400810772}
+        m_TargetAssemblyTypeName: NewspaperButton, Assembly-CSharp
+        m_MethodName: ButtonPressed
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -594,6 +627,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 400810767}
   m_CullTransparentMesh: 1
+--- !u!114 &400810772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 400810767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8462a380b47d0934388a9fde78ba0dec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 1687258583}
+  cameraZoomedPosition: {x: -182, y: -171, z: -554}
+  focus: 4
 --- !u!1 &653260035
 GameObject:
   m_ObjectHideFlags: 0
@@ -654,6 +702,7 @@ GameObject:
   - component: {fileID: 761919262}
   - component: {fileID: 761919261}
   - component: {fileID: 761919260}
+  - component: {fileID: 761919263}
   m_Layer: 5
   m_Name: BottomRight
   m_TagString: Untagged
@@ -724,10 +773,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1687258583}
-        m_TargetAssemblyTypeName: CameraMovement, Assembly-CSharp
-        m_MethodName: ZoomIn
-        m_Mode: 5
+      - m_Target: {fileID: 761919263}
+        m_TargetAssemblyTypeName: NewspaperButton, Assembly-CSharp
+        m_MethodName: ButtonPressed
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -774,6 +823,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 761919258}
   m_CullTransparentMesh: 1
+--- !u!114 &761919263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 761919258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8462a380b47d0934388a9fde78ba0dec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 1687258583}
+  cameraZoomedPosition: {x: 189, y: -515, z: -554}
+  focus: 4
 --- !u!1 &835636686
 GameObject:
   m_ObjectHideFlags: 0
@@ -786,6 +850,7 @@ GameObject:
   - component: {fileID: 835636690}
   - component: {fileID: 835636689}
   - component: {fileID: 835636688}
+  - component: {fileID: 835636691}
   m_Layer: 5
   m_Name: TopRight
   m_TagString: Untagged
@@ -856,10 +921,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1687258583}
-        m_TargetAssemblyTypeName: CameraMovement, Assembly-CSharp
-        m_MethodName: ZoomIn
-        m_Mode: 5
+      - m_Target: {fileID: 835636691}
+        m_TargetAssemblyTypeName: NewspaperButton, Assembly-CSharp
+        m_MethodName: ButtonPressed
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -906,6 +971,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 835636686}
   m_CullTransparentMesh: 1
+--- !u!114 &835636691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 835636686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8462a380b47d0934388a9fde78ba0dec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 1687258583}
+  cameraZoomedPosition: {x: 188, y: 493, z: -554}
+  focus: 3
 --- !u!1 &880302768
 GameObject:
   m_ObjectHideFlags: 0
@@ -918,6 +998,7 @@ GameObject:
   - component: {fileID: 880302772}
   - component: {fileID: 880302771}
   - component: {fileID: 880302770}
+  - component: {fileID: 880302773}
   m_Layer: 5
   m_Name: Bottom
   m_TagString: Untagged
@@ -988,10 +1069,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1687258583}
-        m_TargetAssemblyTypeName: CameraMovement, Assembly-CSharp
-        m_MethodName: ZoomIn
-        m_Mode: 5
+      - m_Target: {fileID: 880302773}
+        m_TargetAssemblyTypeName: NewspaperButton, Assembly-CSharp
+        m_MethodName: ButtonPressed
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1038,6 +1119,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 880302768}
   m_CullTransparentMesh: 1
+--- !u!114 &880302773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 880302768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8462a380b47d0934388a9fde78ba0dec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 1687258583}
+  cameraZoomedPosition: {x: -2.3, y: 365, z: -1122.5}
+  focus: 3
 --- !u!1 &1315090142
 GameObject:
   m_ObjectHideFlags: 0
@@ -1050,6 +1146,7 @@ GameObject:
   - component: {fileID: 1315090145}
   - component: {fileID: 1315090144}
   - component: {fileID: 1315090143}
+  - component: {fileID: 1315090147}
   m_Layer: 5
   m_Name: SecondPage
   m_TagString: Untagged
@@ -1101,10 +1198,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1687258583}
-        m_TargetAssemblyTypeName: CameraMovement, Assembly-CSharp
-        m_MethodName: ZoomIn
-        m_Mode: 5
+      - m_Target: {fileID: 1315090147}
+        m_TargetAssemblyTypeName: NewspaperButton, Assembly-CSharp
+        m_MethodName: ButtonPressed
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1170,6 +1267,21 @@ RectTransform:
   m_AnchoredPosition: {x: 4.5337, y: -348}
   m_SizeDelta: {x: 98.721, y: 97.2}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1315090147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1315090142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8462a380b47d0934388a9fde78ba0dec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 1687258583}
+  cameraZoomedPosition: {x: 0, y: -324, z: -1202}
+  focus: 2
 --- !u!1 &1410359464
 GameObject:
   m_ObjectHideFlags: 0
@@ -1462,13 +1574,6 @@ MonoBehaviour:
   overViewPosition: {x: 0, y: 0, z: -1650}
   page1Position: {x: 0, y: 406, z: -1202}
   page2Position: {x: 0, y: -324, z: -1202}
-  p1tl: {x: -186, y: 493, z: -554}
-  p1tr: {x: 188, y: 493, z: -554}
-  p1b: {x: -2.3, y: 365, z: -1122.5}
-  p2tl: {x: -182, y: -171, z: -554}
-  p2tr: {x: 189, y: -171, z: -554}
-  p2bl: {x: -182, y: -515, z: -554}
-  p2br: {x: 189, y: -515, z: -554}
   focus: 0
   movementSpeed: 0.5
   isMoving: 0
@@ -1585,6 +1690,7 @@ GameObject:
   - component: {fileID: 1723098310}
   - component: {fileID: 1723098309}
   - component: {fileID: 1723098308}
+  - component: {fileID: 1723098311}
   m_Layer: 5
   m_Name: TopRight
   m_TagString: Untagged
@@ -1655,10 +1761,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1687258583}
-        m_TargetAssemblyTypeName: CameraMovement, Assembly-CSharp
-        m_MethodName: ZoomIn
-        m_Mode: 5
+      - m_Target: {fileID: 1723098311}
+        m_TargetAssemblyTypeName: NewspaperButton, Assembly-CSharp
+        m_MethodName: ButtonPressed
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1705,6 +1811,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1723098306}
   m_CullTransparentMesh: 1
+--- !u!114 &1723098311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1723098306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8462a380b47d0934388a9fde78ba0dec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 1687258583}
+  cameraZoomedPosition: {x: 189, y: -171, z: -554}
+  focus: 4
 --- !u!1 &1727650335
 GameObject:
   m_ObjectHideFlags: 0
@@ -1796,6 +1917,7 @@ GameObject:
   - component: {fileID: 1996822518}
   - component: {fileID: 1996822517}
   - component: {fileID: 1996822516}
+  - component: {fileID: 1996822519}
   m_Layer: 5
   m_Name: TopLeft
   m_TagString: Untagged
@@ -1866,10 +1988,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1687258583}
-        m_TargetAssemblyTypeName: CameraMovement, Assembly-CSharp
-        m_MethodName: ZoomIn
-        m_Mode: 5
+      - m_Target: {fileID: 1996822519}
+        m_TargetAssemblyTypeName: NewspaperButton, Assembly-CSharp
+        m_MethodName: ButtonPressed
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1916,6 +2038,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1996822514}
   m_CullTransparentMesh: 1
+--- !u!114 &1996822519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1996822514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8462a380b47d0934388a9fde78ba0dec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 1687258583}
+  cameraZoomedPosition: {x: -186, y: 493, z: -554}
+  focus: 3
 --- !u!1 &2049471189
 GameObject:
   m_ObjectHideFlags: 0

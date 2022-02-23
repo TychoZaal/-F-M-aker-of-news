@@ -6,9 +6,9 @@ using UnityEngine.UI;
 public class CameraMovement : MonoBehaviour
 {
     [SerializeField]
-    private Vector3 overViewPosition, page1Position, page2Position, p1tl, p1tr, p1b, p2tl, p2tr, p2bl, p2br;
+    private Vector3 overViewPosition, page1Position, page2Position;
 
-    private enum Focus { Overview, Page1, Page2, Article1, Article2};
+    public enum Focus { Overview, Page1, Page2, Article1, Article2};
     [SerializeField]
     private Focus focus = Focus.Overview;
 
@@ -101,49 +101,14 @@ public class CameraMovement : MonoBehaviour
         isMoving = false;
     }
 
-    private Vector3 DecypherLocation(string location)
+    public void ZoomIn(Vector3 location, Focus focus)
     {
-        switch (location)
-        {
-            case "P1":
-                focus = Focus.Page1;
-                return page1Position;
-            case "P2":
-                focus = Focus.Page2;
-                return page2Position;
-            case "P1TL":
-                focus = Focus.Article1;
-                return p1tl;
-            case "P1TR":
-                focus = Focus.Article1;
-                return p1tr;
-            case "P1B":
-                focus = Focus.Article1;
-                return p1b;
-            case "P2TL":
-                focus = Focus.Article2;
-                return p2tl;
-            case "P2TR":
-                focus = Focus.Article2;
-                return p2tr;
-            case "P2BL":
-                focus = Focus.Article2;
-                return p2bl;
-            case "P2BR":
-                focus = Focus.Article2;
-                return p2br;
-        }
-
-        return Vector3.zero;
-    }
-
-    public void ZoomIn(string location)
-    {
-        Debug.LogError("Zoomin");
-
         if (isMoving) return;
 
-        StartCoroutine(MoveToPosition(transform, DecypherLocation(location), movementSpeed));
+        Debug.LogError("Moving");
+
+        StartCoroutine(MoveToPosition(transform, location, movementSpeed));
+        this.focus = focus;
     }
 
     public void ZoomOut()
