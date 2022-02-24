@@ -16,11 +16,23 @@ public class NewspaperButton : MonoBehaviour
     [SerializeField]
     private CameraMovement.Focus focus;
 
+    [SerializeField]
+    private GameObject articleOveriew;
+
+    private void Start()
+    {
+        if (articleOveriew != null)
+            cam.articleOverlayButtons.Add(articleOveriew);
+    }
+
     public void ButtonPressed()
     {
         cam.ZoomIn(cameraZoomedPosition, focus);
 
         if (minigame != null)
             minigame.ActivateScene();
+
+        if (articleOveriew != null)
+            articleOveriew.SetActive(true);
     }
 }

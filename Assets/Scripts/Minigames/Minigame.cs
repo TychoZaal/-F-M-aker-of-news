@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Minigame : MonoBehaviour
 {
+    [SerializeField]
     protected float timeScale = 0.0f;
 
     public virtual void ActivateScene()

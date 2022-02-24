@@ -24,6 +24,9 @@ public class CameraMovement : MonoBehaviour
     [SerializeField]
     private List<Minigame> minigames;
 
+    [HideInInspector]
+    public List<GameObject> articleOverlayButtons = new List<GameObject>();
+
     // Start is called before the first frame update
     void Start()
     {
@@ -139,6 +142,11 @@ public class CameraMovement : MonoBehaviour
         for (int i = 0; i < minigames.Count; i++)
         {
             minigames[i].DeactivateScene();
+        }
+
+        for (int i = 0; i < articleOverlayButtons.Count; i++)
+        {
+            articleOverlayButtons[i].SetActive(false);
         }
     }
 }
