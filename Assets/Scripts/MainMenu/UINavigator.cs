@@ -10,6 +10,6 @@ public class UINavigator : MonoBehaviour
     public void OpenArticle()
     {
         Debug.Log("Open Article");
-        articleContentCreator.updateContent(pageInformation);
+        articleContentCreator.UpdateContent(pageInformation);
     }
 }

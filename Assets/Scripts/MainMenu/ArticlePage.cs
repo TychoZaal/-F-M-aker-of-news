@@ -12,4 +12,6 @@ public class ArticlePage : ScriptableObject
     [SerializeField] public Sprite articleImage = null;
 
     [SerializeField] public string minigameScene = "sceneName";
+
+    [SerializeField] public bool isCompleted = false;
 }

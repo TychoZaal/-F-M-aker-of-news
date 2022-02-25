@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - m1Woman
+  - m1Man
   layers:
   - Default
   - TransparentFX

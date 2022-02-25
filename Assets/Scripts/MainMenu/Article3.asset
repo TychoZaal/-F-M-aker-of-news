@@ -16,4 +16,4 @@ MonoBehaviour:
   articleText: This is the text of the third article. Explain shortly about the news
     in here.
   articleImage: {fileID: 21300000, guid: 9fdb6cd21a8a36443b715130e5c15bc3, type: 3}
-  minigameScene: 
+  minigameScene: Minigame1

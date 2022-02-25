@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ArticleContentCreator : MonoBehaviour
 {
@@ -13,19 +14,27 @@ public class ArticleContentCreator : MonoBehaviour
     [SerializeField] GameObject mainMenu = null;
     [SerializeField] GameObject articleMenu = null;
 
-    public void updateContent(ArticlePage articlePage)
+    private string currentArticle = "";
+
+    public void UpdateContent(ArticlePage articlePage)
     {
         title.text = articlePage.title;
         text.text = articlePage.articleText;
         image.sprite = articlePage.articleImage;
+        currentArticle = articlePage.minigameScene;
 
         mainMenu.SetActive(false);
         articleMenu.SetActive(true);
     }
 
-    public void backToMainMenu()
+    public void BackToMainMenu()
     {
         mainMenu.SetActive(true);
         articleMenu.SetActive(false);
+    }
+
+    public void LoadGameScene()
+    {
+        SceneManager.LoadScene(currentArticle);
     }
 }
