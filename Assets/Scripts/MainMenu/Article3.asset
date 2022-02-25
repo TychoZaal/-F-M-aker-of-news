@@ -17,3 +17,4 @@ MonoBehaviour:
     in here.
   articleImage: {fileID: 21300000, guid: 9fdb6cd21a8a36443b715130e5c15bc3, type: 3}
   minigameScene: Minigame1
+  isCompleted: 0

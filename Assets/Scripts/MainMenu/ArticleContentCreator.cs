@@ -14,6 +14,8 @@ public class ArticleContentCreator : MonoBehaviour
     [SerializeField] GameObject mainMenu = null;
     [SerializeField] GameObject articleMenu = null;
 
+    [SerializeField] TextMeshProUGUI TEMPCompletedText = null;
+
     private string currentArticle = "";
 
     public void UpdateContent(ArticlePage articlePage)
@@ -22,6 +24,12 @@ public class ArticleContentCreator : MonoBehaviour
         text.text = articlePage.articleText;
         image.sprite = articlePage.articleImage;
         currentArticle = articlePage.minigameScene;
+
+        //TEMP!!
+        TEMPCompletedText.text = articlePage.isCompleted ? "COMPLETED!!" : "NOT COMPLETED YET";
+        //
+
+        GameManager.Instance.CurrentArticle = articlePage;
 
         mainMenu.SetActive(false);
         articleMenu.SetActive(true);

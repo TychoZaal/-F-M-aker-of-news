@@ -13,5 +13,6 @@ public class ArticlePage : ScriptableObject
 
     [SerializeField] public string minigameScene = "sceneName";
 
+    //Dit moet je handmatig via de inspector weer op false zetten als je opnieuw wil spelen. Heb dit in scriptable object gedaan zodat niet elke keer als je de game start je alle minigames weer opnieuw moet doen
     [SerializeField] public bool isCompleted = false;
 }

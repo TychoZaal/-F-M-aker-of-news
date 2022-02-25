@@ -24,6 +24,8 @@ public class SashMovement : MonoBehaviour
 
             GetComponent<Collider2D>().enabled = false;
 
+            GameManager.Instance.backToHome.Invoke();
+
         }
     }
 
