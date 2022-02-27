@@ -36,7 +36,15 @@ public class AmericanFlag : Minigame
     private CameraShake shake;
 
     [SerializeField]
-    private GameObject flagButton;
+    private Transform minXY, maxXY;
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawLine(new Vector3(minXY.position.x, minXY.position.y, 0), new Vector3(minXY.position.x, maxXY.position.y, 0));
+        Gizmos.DrawLine(new Vector3(minXY.position.x, maxXY.position.y, 0), new Vector3(maxXY.position.x, maxXY.position.y, 0));
+        Gizmos.DrawLine(new Vector3(maxXY.position.x, maxXY.position.y, 0), new Vector3(maxXY.position.x, minXY.position.y, 0));
+        Gizmos.DrawLine(new Vector3(maxXY.position.x, minXY.position.y, 0), new Vector3(minXY.position.x, minXY.position.y, 0));
+    }
 
     // Update is called once per frame
     void Update()
@@ -50,8 +58,11 @@ public class AmericanFlag : Minigame
         if (transform.position.y <= bottom.position.y - speedModifier) return;
 
         transform.position = transform.position - new Vector3(0.0f, speedModifier, 0.0f) * Time.fixedDeltaTime * timeScale;
+    }
 
-        flagButton.SetActive(miniGameActive);
+    private void OnMouseDown()
+    {
+        JumpUpFlag();
     }
 
     private void ReachedTop()
