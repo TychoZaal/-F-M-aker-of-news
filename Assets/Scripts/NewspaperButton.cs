@@ -26,9 +26,7 @@ public class NewspaperButton : MonoBehaviour
     }
 
     public void ButtonPressed()
-    {
-        Debug.LogError("Button");
-
+    {                                                                              
         cam.ZoomIn(cameraZoomedPosition, focus);
 
         if (minigame != null)

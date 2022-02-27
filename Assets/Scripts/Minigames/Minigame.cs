@@ -7,6 +7,7 @@ public class Minigame : MonoBehaviour
     [SerializeField]
     protected float timeScale = 0.0f;
 
+    [SerializeField]
     protected bool miniGameActive = false;
 
     public virtual void ActivateScene()

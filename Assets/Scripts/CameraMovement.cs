@@ -6,9 +6,9 @@ using UnityEngine.UI;
 public class CameraMovement : MonoBehaviour
 {
     [SerializeField]
-    private Vector3 overViewPosition, page1Position, page2Position;
+    private Vector3 overViewPosition, page1Position, page2Position, page3Position;
 
-    public enum Focus { Overview, Page1, Page2, Article1, Article2};
+    public enum Focus { Overview, Page1, Page2, Page3, Article1, Article2, Article3};
     [SerializeField]
     private Focus focus = Focus.Overview;
 
@@ -19,7 +19,7 @@ public class CameraMovement : MonoBehaviour
     private bool isMoving = false;
 
     [SerializeField]
-    private List<Button> overviewButtons, pageOneButtons, pageTwoButtons;
+    private List<Button> overviewButtons, pageOneButtons, pageTwoButtons, pageThreeButtons;
 
     [SerializeField]
     private List<Minigame> minigames;
@@ -74,6 +74,8 @@ public class CameraMovement : MonoBehaviour
         if (newPos.y >= yMax) return;
 
         transform.position = newPos;
+
+        overViewPosition = transform.position;
     }
 
     private void ManageButtons()
@@ -96,6 +98,11 @@ public class CameraMovement : MonoBehaviour
                     pageTwoButtons[i].enabled = false;
                     pageTwoButtons[i].GetComponent<Image>().enabled = false;
                 }
+                for (int i = 0; i < pageThreeButtons.Count; i++)
+                {
+                    pageThreeButtons[i].enabled = false;
+                    pageThreeButtons[i].GetComponent<Image>().enabled = false;
+                }
                 break;
 
             case Focus.Page1:
@@ -113,6 +120,11 @@ public class CameraMovement : MonoBehaviour
                 {
                     pageTwoButtons[i].enabled = false;
                     pageTwoButtons[i].GetComponent<Image>().enabled = false;
+                }
+                for (int i = 0; i < pageThreeButtons.Count; i++)
+                {
+                    pageThreeButtons[i].enabled = false;
+                    pageThreeButtons[i].GetComponent<Image>().enabled = false;
                 }
                 break;
 
@@ -132,6 +144,34 @@ public class CameraMovement : MonoBehaviour
                     pageTwoButtons[i].enabled = true;
                     pageTwoButtons[i].GetComponent<Image>().enabled = true;
                 }
+                for (int i = 0; i < pageThreeButtons.Count; i++)
+                {
+                    pageThreeButtons[i].enabled = false;
+                    pageThreeButtons[i].GetComponent<Image>().enabled = false;
+                }
+                break;
+
+            case Focus.Page3:
+                for (int i = 0; i < overviewButtons.Count; i++)
+                {
+                    overviewButtons[i].enabled = false;
+                    overviewButtons[i].GetComponent<Image>().enabled = false;
+                }
+                for (int i = 0; i < pageOneButtons.Count; i++)
+                {
+                    pageOneButtons[i].enabled = false;
+                    pageOneButtons[i].GetComponent<Image>().enabled = false;
+                }
+                for (int i = 0; i < pageTwoButtons.Count; i++)
+                {
+                    pageTwoButtons[i].enabled = false;
+                    pageTwoButtons[i].GetComponent<Image>().enabled = false;
+                }
+                for (int i = 0; i < pageThreeButtons.Count; i++)
+                {
+                    pageThreeButtons[i].enabled = true;
+                    pageThreeButtons[i].GetComponent<Image>().enabled = true;
+                }
                 break;
             case Focus.Article1:
                 for (int i = 0; i < overviewButtons.Count; i++)
@@ -149,6 +189,11 @@ public class CameraMovement : MonoBehaviour
                     pageTwoButtons[i].enabled = false;
                     pageTwoButtons[i].GetComponent<Image>().enabled = false;
                 }
+                for (int i = 0; i < pageThreeButtons.Count; i++)
+                {
+                    pageThreeButtons[i].enabled = false;
+                    pageThreeButtons[i].GetComponent<Image>().enabled = false;
+                }
                 break;
             case Focus.Article2:
                 for (int i = 0; i < overviewButtons.Count; i++)
@@ -161,10 +206,27 @@ public class CameraMovement : MonoBehaviour
                     pageOneButtons[i].enabled = false;
                     pageOneButtons[i].GetComponent<Image>().enabled = false;
                 }
-                for (int i = 0; i < pageTwoButtons.Count; i++)
+                for (int i = 0; i < pageThreeButtons.Count; i++)
                 {
-                    pageTwoButtons[i].enabled = false;
-                    pageTwoButtons[i].GetComponent<Image>().enabled = false;
+                    pageThreeButtons[i].enabled = false;
+                    pageThreeButtons[i].GetComponent<Image>().enabled = false;
+                }
+                break;
+            case Focus.Article3:
+                for (int i = 0; i < overviewButtons.Count; i++)
+                {
+                    overviewButtons[i].enabled = false;
+                    overviewButtons[i].GetComponent<Image>().enabled = false;
+                }
+                for (int i = 0; i < pageOneButtons.Count; i++)
+                {
+                    pageOneButtons[i].enabled = false;
+                    pageOneButtons[i].GetComponent<Image>().enabled = false;
+                }
+                for (int i = 0; i < pageThreeButtons.Count; i++)
+                {
+                    pageThreeButtons[i].enabled = false;
+                    pageThreeButtons[i].GetComponent<Image>().enabled = false;
                 }
                 break;
         }
@@ -206,11 +268,19 @@ public class CameraMovement : MonoBehaviour
                 StartCoroutine(MoveToPosition(transform, page2Position, movementSpeed));
                 focus = Focus.Page2;
                 break;
+            case Focus.Article3:
+                StartCoroutine(MoveToPosition(transform, page3Position, movementSpeed));
+                focus = Focus.Page3;
+                break;
             case Focus.Page1:
                 StartCoroutine(MoveToPosition(transform, overViewPosition, movementSpeed));
                 focus = Focus.Overview;
                 break;
             case Focus.Page2:
+                StartCoroutine(MoveToPosition(transform, overViewPosition, movementSpeed));
+                focus = Focus.Overview;
+                break;
+            case Focus.Page3:
                 StartCoroutine(MoveToPosition(transform, overViewPosition, movementSpeed));
                 focus = Focus.Overview;
                 break;
@@ -228,8 +298,12 @@ public class CameraMovement : MonoBehaviour
         }
     }
 
-    public void ResetCamera(float timer)
+    public IEnumerator ResetCamera(float timer, Focus focus)
     {
-        Invoke("ZoomOut", timer);
+        yield return new WaitForSeconds(timer);
+
+        this.focus = focus;
+
+        ZoomOut();
     }
 }

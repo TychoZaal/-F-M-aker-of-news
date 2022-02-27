@@ -26,7 +26,7 @@ public class SashMovement : Minigame
         {
             Debug.LogError("Won!!");
             wonGame = true;
-            CameraMovement.instance.ResetCamera(3.0f);
+            StartCoroutine(CameraMovement.instance.ResetCamera(3.0f, CameraMovement.Focus.Page2));
         }
     }
 
