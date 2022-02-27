@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AmericanFlag : Minigame
 {
@@ -34,6 +35,9 @@ public class AmericanFlag : Minigame
     [SerializeField]
     private CameraShake shake;
 
+    [SerializeField]
+    private GameObject flagButton;
+
     // Update is called once per frame
     void Update()
     {
@@ -43,14 +47,11 @@ public class AmericanFlag : Minigame
             return;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            JumpUpFlag();
-        }
-
         if (transform.position.y <= bottom.position.y - speedModifier) return;
 
         transform.position = transform.position - new Vector3(0.0f, speedModifier, 0.0f) * Time.fixedDeltaTime * timeScale;
+
+        flagButton.SetActive(miniGameActive);
     }
 
     private void ReachedTop()
@@ -63,16 +64,18 @@ public class AmericanFlag : Minigame
             stars[i].isKinematic = false;
             stars[i].useGravity = true;
             stars[i].AddExplosionForce(explosionForce, middleStar.position, explosionRadius, 1.0f, ForceMode.Impulse);
-            Destroy(stars[i].gameObject, 13.0f);
         }
 
         shake.Begin();
 
         reachedTop = true;
+        CameraMovement.instance.ResetCamera(3.0f);
     }
 
-    private void JumpUpFlag()
+    public void JumpUpFlag()
     {
+        if (reachedTop) return;
+
         StartCoroutine(MoveToPosition(transform, transform.position + new Vector3(0.0f, jumpBoost, 0.0f) * Time.fixedDeltaTime * timeScale, jumpLerpSpeed));
     }
 
