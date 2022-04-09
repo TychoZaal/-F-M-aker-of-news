@@ -19,13 +19,12 @@ public class CameraMovement : MonoBehaviour
     private bool isMoving = false;
 
     [SerializeField]
-    private List<Button> overviewButtons, pageOneButtons, pageTwoButtons, pageThreeButtons;
-
-    [SerializeField]
     private List<Minigame> minigames;
 
     [HideInInspector]
     public List<GameObject> articleOverlayButtons = new List<GameObject>();
+
+    public List<Button> allButtons = new List<Button>();
 
     public static CameraMovement instance;
 
@@ -54,12 +53,23 @@ public class CameraMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ManageButtons();
-
         if (Input.GetKeyDown(KeyCode.Escape))
             ZoomOut();
 
         if (focus == Focus.Overview) Scroll();
+    }
+
+    public void ResetButtons(List<Button> exceptions)
+    {
+        for (int i = 0; i < allButtons.Count; i++)
+        {
+            allButtons[i].enabled = false;
+        }
+
+        for (int i = 0; i < exceptions.Count; i++)
+        {
+            exceptions[i].enabled = true;
+        }
     }
 
     private void Scroll()
@@ -76,160 +86,6 @@ public class CameraMovement : MonoBehaviour
         transform.position = newPos;
 
         overViewPosition = transform.position;
-    }
-
-    private void ManageButtons()
-    {
-        switch (focus)
-        {
-            case Focus.Overview:
-                for (int i = 0; i < overviewButtons.Count; i++)
-                {
-                    overviewButtons[i].enabled = true;
-                    overviewButtons[i].GetComponent<Image>().enabled = true;
-                }
-                for (int i = 0; i < pageOneButtons.Count; i++)
-                {
-                    pageOneButtons[i].enabled = false;
-                    pageOneButtons[i].GetComponent<Image>().enabled = false;
-                }
-                for (int i = 0; i < pageTwoButtons.Count; i++)
-                {
-                    pageTwoButtons[i].enabled = false;
-                    pageTwoButtons[i].GetComponent<Image>().enabled = false;
-                }
-                for (int i = 0; i < pageThreeButtons.Count; i++)
-                {
-                    pageThreeButtons[i].enabled = false;
-                    pageThreeButtons[i].GetComponent<Image>().enabled = false;
-                }
-                break;
-
-            case Focus.Page1:
-                for (int i = 0; i < overviewButtons.Count; i++)
-                {
-                    overviewButtons[i].enabled = false;
-                    overviewButtons[i].GetComponent<Image>().enabled = false;
-                }
-                for (int i = 0; i < pageOneButtons.Count; i++)
-                {
-                    pageOneButtons[i].enabled = true;
-                    pageOneButtons[i].GetComponent<Image>().enabled = true;
-                }
-                for (int i = 0; i < pageTwoButtons.Count; i++)
-                {
-                    pageTwoButtons[i].enabled = false;
-                    pageTwoButtons[i].GetComponent<Image>().enabled = false;
-                }
-                for (int i = 0; i < pageThreeButtons.Count; i++)
-                {
-                    pageThreeButtons[i].enabled = false;
-                    pageThreeButtons[i].GetComponent<Image>().enabled = false;
-                }
-                break;
-
-            case Focus.Page2:
-                for (int i = 0; i < overviewButtons.Count; i++)
-                {
-                    overviewButtons[i].enabled = false;
-                    overviewButtons[i].GetComponent<Image>().enabled = false;
-                }
-                for (int i = 0; i < pageOneButtons.Count; i++)
-                {
-                    pageOneButtons[i].enabled = false;
-                    pageOneButtons[i].GetComponent<Image>().enabled = false;
-                }
-                for (int i = 0; i < pageTwoButtons.Count; i++)
-                {
-                    pageTwoButtons[i].enabled = true;
-                    pageTwoButtons[i].GetComponent<Image>().enabled = true;
-                }
-                for (int i = 0; i < pageThreeButtons.Count; i++)
-                {
-                    pageThreeButtons[i].enabled = false;
-                    pageThreeButtons[i].GetComponent<Image>().enabled = false;
-                }
-                break;
-
-            case Focus.Page3:
-                for (int i = 0; i < overviewButtons.Count; i++)
-                {
-                    overviewButtons[i].enabled = false;
-                    overviewButtons[i].GetComponent<Image>().enabled = false;
-                }
-                for (int i = 0; i < pageOneButtons.Count; i++)
-                {
-                    pageOneButtons[i].enabled = false;
-                    pageOneButtons[i].GetComponent<Image>().enabled = false;
-                }
-                for (int i = 0; i < pageTwoButtons.Count; i++)
-                {
-                    pageTwoButtons[i].enabled = false;
-                    pageTwoButtons[i].GetComponent<Image>().enabled = false;
-                }
-                for (int i = 0; i < pageThreeButtons.Count; i++)
-                {
-                    pageThreeButtons[i].enabled = true;
-                    pageThreeButtons[i].GetComponent<Image>().enabled = true;
-                }
-                break;
-            case Focus.Article1:
-                for (int i = 0; i < overviewButtons.Count; i++)
-                {
-                    overviewButtons[i].enabled = false;
-                    overviewButtons[i].GetComponent<Image>().enabled = false;
-                }
-                for (int i = 0; i < pageOneButtons.Count; i++)
-                {
-                    pageOneButtons[i].enabled = false;
-                    pageOneButtons[i].GetComponent<Image>().enabled = false;
-                }
-                for (int i = 0; i < pageTwoButtons.Count; i++)
-                {
-                    pageTwoButtons[i].enabled = false;
-                    pageTwoButtons[i].GetComponent<Image>().enabled = false;
-                }
-                for (int i = 0; i < pageThreeButtons.Count; i++)
-                {
-                    pageThreeButtons[i].enabled = false;
-                    pageThreeButtons[i].GetComponent<Image>().enabled = false;
-                }
-                break;
-            case Focus.Article2:
-                for (int i = 0; i < overviewButtons.Count; i++)
-                {
-                    overviewButtons[i].enabled = false;
-                    overviewButtons[i].GetComponent<Image>().enabled = false;
-                }
-                for (int i = 0; i < pageOneButtons.Count; i++)
-                {
-                    pageOneButtons[i].enabled = false;
-                    pageOneButtons[i].GetComponent<Image>().enabled = false;
-                }
-                for (int i = 0; i < pageThreeButtons.Count; i++)
-                {
-                    pageThreeButtons[i].enabled = false;
-                    pageThreeButtons[i].GetComponent<Image>().enabled = false;
-                }
-                break;
-            case Focus.Article3:
-                for (int i = 0; i < overviewButtons.Count; i++)
-                {
-                    overviewButtons[i].enabled = false;
-                    overviewButtons[i].GetComponent<Image>().enabled = false;
-                }
-                for (int i = 0; i < pageOneButtons.Count; i++)
-                {
-                    pageOneButtons[i].enabled = false;
-                    pageOneButtons[i].GetComponent<Image>().enabled = false;
-                }
-                for (int i = 0; i < pageThreeButtons.Count; i++)
-                {
-                    pageThreeButtons[i].enabled = false;
-                    pageThreeButtons[i].GetComponent<Image>().enabled = false;
-                }
-                break;
-        }
     }
 
     public IEnumerator MoveToPosition(Transform transform, Vector3 position, float timeToMove)
@@ -258,34 +114,6 @@ public class CameraMovement : MonoBehaviour
     {
         if (isMoving) return;
 
-        switch (focus)
-        {
-            case Focus.Article1:
-                StartCoroutine(MoveToPosition(transform, page1Position, movementSpeed));
-                focus = Focus.Page1;
-                break;
-            case Focus.Article2:
-                StartCoroutine(MoveToPosition(transform, page2Position, movementSpeed));
-                focus = Focus.Page2;
-                break;
-            case Focus.Article3:
-                StartCoroutine(MoveToPosition(transform, page3Position, movementSpeed));
-                focus = Focus.Page3;
-                break;
-            case Focus.Page1:
-                StartCoroutine(MoveToPosition(transform, overViewPosition, movementSpeed));
-                focus = Focus.Overview;
-                break;
-            case Focus.Page2:
-                StartCoroutine(MoveToPosition(transform, overViewPosition, movementSpeed));
-                focus = Focus.Overview;
-                break;
-            case Focus.Page3:
-                StartCoroutine(MoveToPosition(transform, overViewPosition, movementSpeed));
-                focus = Focus.Overview;
-                break;
-        }
-
         for (int i = 0; i < minigames.Count; i++)
         {
             if (minigames[i] != null)
@@ -295,6 +123,15 @@ public class CameraMovement : MonoBehaviour
         for (int i = 0; i < articleOverlayButtons.Count; i++)
         {
             articleOverlayButtons[i].SetActive(true);
+        }
+
+        for (int i = 0; i < allButtons.Count; i++)
+        {
+            if (allButtons[i].enabled)
+            {
+                allButtons[i].GetComponent<NewspaperButton>().ActivateParentButtons();
+                break;
+            }
         }
     }
 
