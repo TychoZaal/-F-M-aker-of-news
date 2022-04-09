@@ -22,17 +22,11 @@ public class NewspaperButton : MonoBehaviour
     private CameraMovement.Focus focus;
 
     [SerializeField]
-    private GameObject articleOveriew;
-
-    [SerializeField]
-    public List<Button> buttonsToActivate, parentButtons;
+    public List<Image> buttonsToActivate, parentButtons;
 
     private void Start()
     {
-        if (articleOveriew != null)
-            cam.articleOverlayButtons.Add(articleOveriew);
-
-        cam.allButtons.Add(GetComponent<Button>());
+        cam.allButtons.Add(GetComponent<Image>());
     }
 
     public void ButtonPressed()
@@ -43,19 +37,16 @@ public class NewspaperButton : MonoBehaviour
 
         if (minigame != null)
             minigame.ActivateScene();
-
-        if (articleOveriew != null)
-            articleOveriew.SetActive(true);
     }
     
     public void ActivateParentButtons()
     {
-        if (parentButton.parentButton == null)
+        if (parentButton == null)
         {
             return;
         }
 
-        cam.ZoomIn(parentButton.parentButton.cameraZoomedPosition, parentButton.parentButton.focus);
+        cam.ZoomIn(parentButton.cameraZoomedPosition, parentButton.focus);
         cam.ResetButtons(parentButtons);
     }
 }

@@ -334,11 +334,10 @@ MonoBehaviour:
   minigame: {fileID: 0}
   cameraZoomedPosition: {x: 0, y: 406, z: -1202}
   parentButton: {fileID: 785507825}
-  focus: 1
-  articleOveriew: {fileID: 0}
+  focus: 0
   buttonsToActivate:
-  - {fileID: 1996822516}
-  - {fileID: 880302770}
+  - {fileID: 1996822517}
+  - {fileID: 880302771}
   parentButtons: []
 --- !u!1 &88517318
 GameObject:
@@ -591,11 +590,10 @@ MonoBehaviour:
   minigame: {fileID: 0}
   cameraZoomedPosition: {x: 0, y: -798, z: -1202}
   parentButton: {fileID: 785507825}
-  focus: 3
-  articleOveriew: {fileID: 0}
+  focus: 0
   buttonsToActivate:
-  - {fileID: 2116132214}
-  - {fileID: 1245941271}
+  - {fileID: 2116132215}
+  - {fileID: 1245941272}
   parentButtons: []
 --- !u!114 &117142707
 MonoBehaviour:
@@ -1025,13 +1023,13 @@ MonoBehaviour:
   minigame: {fileID: 0}
   cameraZoomedPosition: {x: -2.3, y: 365, z: -1122.5}
   parentButton: {fileID: 1315090147}
-  focus: 3
-  articleOveriew: {fileID: 0}
-  buttonsToActivate: []
+  focus: 1
+  buttonsToActivate:
+  - {fileID: 341680633}
   parentButtons:
-  - {fileID: 79920734}
-  - {fileID: 1315090143}
-  - {fileID: 117142707}
+  - {fileID: 79920735}
+  - {fileID: 1315090144}
+  - {fileID: 117142708}
 --- !u!114 &341680632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1039,7 +1037,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 341680629}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
@@ -1075,7 +1073,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 341680633}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 341680631}
+        m_TargetAssemblyTypeName: NewspaperButton, Assembly-CSharp
+        m_MethodName: ButtonPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &341680633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2119,12 +2129,11 @@ MonoBehaviour:
   minigame: {fileID: 0}
   cameraZoomedPosition: {x: 0, y: 119, z: -1279}
   parentButton: {fileID: 0}
-  focus: 1
-  articleOveriew: {fileID: 0}
+  focus: 0
   buttonsToActivate:
-  - {fileID: 79920734}
-  - {fileID: 1315090143}
-  - {fileID: 117142707}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   parentButtons: []
 --- !u!114 &785507826
 MonoBehaviour:
@@ -2165,7 +2174,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 785507827}
   m_OnClick:
     m_PersistentCalls:
@@ -2311,7 +2320,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 880302768}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
@@ -2347,7 +2356,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 880302771}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 880302773}
+        m_TargetAssemblyTypeName: NewspaperButton, Assembly-CSharp
+        m_MethodName: ButtonPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &880302771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2402,13 +2423,13 @@ MonoBehaviour:
   minigame: {fileID: 0}
   cameraZoomedPosition: {x: -2.3, y: 365, z: -1122.5}
   parentButton: {fileID: 79920738}
-  focus: 3
-  articleOveriew: {fileID: 0}
-  buttonsToActivate: []
+  focus: 1
+  buttonsToActivate:
+  - {fileID: 880302771}
   parentButtons:
-  - {fileID: 79920734}
-  - {fileID: 1315090143}
-  - {fileID: 117142707}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &1094246622
 GameObject:
   m_ObjectHideFlags: 0
@@ -2738,13 +2759,13 @@ MonoBehaviour:
   minigame: {fileID: 0}
   cameraZoomedPosition: {x: -2.3, y: 365, z: -1122.5}
   parentButton: {fileID: 117142706}
-  focus: 3
-  articleOveriew: {fileID: 0}
-  buttonsToActivate: []
+  focus: 1
+  buttonsToActivate:
+  - {fileID: 1245941272}
   parentButtons:
-  - {fileID: 79920734}
-  - {fileID: 1315090143}
-  - {fileID: 117142707}
+  - {fileID: 79920735}
+  - {fileID: 1315090144}
+  - {fileID: 117142708}
 --- !u!114 &1245941271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2752,7 +2773,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1245941268}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
@@ -2976,11 +2997,10 @@ MonoBehaviour:
   minigame: {fileID: 0}
   cameraZoomedPosition: {x: 0, y: -324, z: -1202}
   parentButton: {fileID: 785507825}
-  focus: 2
-  articleOveriew: {fileID: 0}
+  focus: 0
   buttonsToActivate:
-  - {fileID: 1838496144}
-  - {fileID: 341680632}
+  - {fileID: 1838496145}
+  - {fileID: 341680633}
   parentButtons: []
 --- !u!114 &1338913176 stripped
 MonoBehaviour:
@@ -3617,7 +3637,6 @@ MonoBehaviour:
   - {fileID: 1338913176}
   - {fileID: 1107522086}
   - {fileID: 6343225154559965907}
-  articleOverlayButtons: []
   allButtons: []
   ZoomAmount: 0
   MaxToClamp: 400
@@ -4026,13 +4045,13 @@ MonoBehaviour:
   minigame: {fileID: 1107522086}
   cameraZoomedPosition: {x: -129, y: -189, z: -703}
   parentButton: {fileID: 1315090147}
-  focus: 4
-  articleOveriew: {fileID: 0}
-  buttonsToActivate: []
+  focus: 1
+  buttonsToActivate:
+  - {fileID: 1838496145}
   parentButtons:
-  - {fileID: 79920734}
-  - {fileID: 1315090143}
-  - {fileID: 117142707}
+  - {fileID: 79920735}
+  - {fileID: 1315090144}
+  - {fileID: 117142708}
 --- !u!114 &1838496144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4040,7 +4059,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1838496141}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
@@ -4228,7 +4247,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1996822514}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
@@ -4331,13 +4350,13 @@ MonoBehaviour:
   minigame: {fileID: 1338913176}
   cameraZoomedPosition: {x: -166, y: 493, z: -569}
   parentButton: {fileID: 79920738}
-  focus: 3
-  articleOveriew: {fileID: 0}
-  buttonsToActivate: []
+  focus: 1
+  buttonsToActivate:
+  - {fileID: 1996822517}
   parentButtons:
-  - {fileID: 79920734}
-  - {fileID: 1315090143}
-  - {fileID: 117142707}
+  - {fileID: 79920735}
+  - {fileID: 1315090144}
+  - {fileID: 117142708}
 --- !u!1 &2020493443
 GameObject:
   m_ObjectHideFlags: 0
@@ -4638,13 +4657,13 @@ MonoBehaviour:
   minigame: {fileID: 6343225154559965907}
   cameraZoomedPosition: {x: -129, y: -1039, z: -703}
   parentButton: {fileID: 117142706}
-  focus: 6
-  articleOveriew: {fileID: 0}
-  buttonsToActivate: []
+  focus: 1
+  buttonsToActivate:
+  - {fileID: 2116132215}
   parentButtons:
-  - {fileID: 79920734}
-  - {fileID: 1315090143}
-  - {fileID: 117142707}
+  - {fileID: 79920735}
+  - {fileID: 1315090144}
+  - {fileID: 117142708}
 --- !u!114 &2116132214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4652,7 +4671,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2116132211}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 

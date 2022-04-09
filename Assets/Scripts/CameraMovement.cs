@@ -8,7 +8,7 @@ public class CameraMovement : MonoBehaviour
     [SerializeField]
     private Vector3 overViewPosition, page1Position, page2Position, page3Position;
 
-    public enum Focus { Overview, Page1, Page2, Page3, Article1, Article2, Article3};
+    public enum Focus { Overview, Article};
     [SerializeField]
     private Focus focus = Focus.Overview;
 
@@ -21,10 +21,7 @@ public class CameraMovement : MonoBehaviour
     [SerializeField]
     private List<Minigame> minigames;
 
-    [HideInInspector]
-    public List<GameObject> articleOverlayButtons = new List<GameObject>();
-
-    public List<Button> allButtons = new List<Button>();
+    public List<Image> allButtons = new List<Image>();
 
     public static CameraMovement instance;
 
@@ -59,16 +56,16 @@ public class CameraMovement : MonoBehaviour
         if (focus == Focus.Overview) Scroll();
     }
 
-    public void ResetButtons(List<Button> exceptions)
+    public void ResetButtons(List<Image> exceptions)
     {
         for (int i = 0; i < allButtons.Count; i++)
         {
-            allButtons[i].enabled = false;
+            allButtons[i].raycastTarget = false;
         }
 
         for (int i = 0; i < exceptions.Count; i++)
         {
-            exceptions[i].enabled = true;
+            exceptions[i].raycastTarget = true;
         }
     }
 
@@ -120,14 +117,9 @@ public class CameraMovement : MonoBehaviour
                 minigames[i].DeactivateScene();
         }
 
-        for (int i = 0; i < articleOverlayButtons.Count; i++)
-        {
-            articleOverlayButtons[i].SetActive(true);
-        }
-
         for (int i = 0; i < allButtons.Count; i++)
         {
-            if (allButtons[i].enabled)
+            if (allButtons[i].raycastTarget)
             {
                 allButtons[i].GetComponent<NewspaperButton>().ActivateParentButtons();
                 break;
@@ -135,11 +127,9 @@ public class CameraMovement : MonoBehaviour
         }
     }
 
-    public IEnumerator ResetCamera(float timer, Focus focus)
+    public IEnumerator ResetCamera(float timer)
     {
         yield return new WaitForSeconds(timer);
-
-        this.focus = focus;
 
         ZoomOut();
     }
