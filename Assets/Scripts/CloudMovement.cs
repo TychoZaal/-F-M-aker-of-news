@@ -84,6 +84,7 @@ public class CloudMovement : Minigame
     private void Sunny()
     {
         sunny = true;
+        GameManager.Instance.CompleteGame(page.pageNumber);
         Debug.LogError("Sunny");
     }
 

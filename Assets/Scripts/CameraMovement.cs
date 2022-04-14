@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class CameraMovement : MonoBehaviour
 {
     [SerializeField]
-    private Vector3 overViewPosition, page1Position, page2Position, page3Position;
+    private Vector3 overViewPosition;
 
     public enum Focus { Overview, Article};
     [SerializeField]
@@ -15,8 +15,7 @@ public class CameraMovement : MonoBehaviour
     [SerializeField]
     private float movementSpeed = 1.0f;
 
-    [SerializeField]
-    private bool isMoving = false;
+    public bool isMoving = false;
 
     [SerializeField]
     private List<Minigame> minigames;
@@ -44,7 +43,7 @@ public class CameraMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        transform.position = overViewPosition;
+        // transform.position = overViewPosition;
     }
 
     // Update is called once per frame

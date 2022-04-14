@@ -25,6 +25,7 @@ public class SashMovement : Minigame
         if (GetComponentInChildren<Sash>().IsOverLapping)
         {
             Debug.LogError("Won!!");
+            GameManager.Instance.CompleteGame(page.pageNumber);
             wonGame = true;
             StartCoroutine(CameraMovement.instance.ResetCamera(3.0f));
         }

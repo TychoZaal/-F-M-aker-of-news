@@ -10,6 +10,9 @@ public class Minigame : MonoBehaviour
     [SerializeField]
     protected bool miniGameActive = false;
 
+    [SerializeField]
+    protected Page page;
+
     public virtual void ActivateScene()
     {
         timeScale = 1.0f;

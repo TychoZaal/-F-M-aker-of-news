@@ -17,6 +17,30 @@ public class GameManager : MonoBehaviour
 
     public ArticlePage CurrentArticle { get { return currentArticle; } set { currentArticle = value; } }
 
+    [System.Serializable]
+    public struct Game
+    {
+        public int id;
+        public Page page;
+        public bool completed;
+
+        public Game(int id, Page page, bool completed)
+        {
+            this.id = id;
+            this.page = page;
+            this.completed = completed;
+
+            page.pageNumber = id;
+            // TODO Spawn new minigame
+        }
+    }
+
+    public List<Game> games = new List<Game>();
+    public List<GameObject> gamePrefabs = new List<GameObject>();
+
+    [SerializeField]
+    private Vector3 pageOffset, generalPageOffset;
+
     private void Awake()
     {
         if(instance != null)
@@ -53,5 +77,25 @@ public class GameManager : MonoBehaviour
     public void ReturnToMain()
     {
 
+    }
+
+    public void CompleteGame(int id)
+    {
+        for (int i = 0; i < games.Count; i++)
+        {
+            if (games[i].id == id)
+            {
+                games[i] = new Game(games[i].id, games[i].page, true);
+            }
+        }
+    }
+
+    private void Update()
+    {
+        for (int i = 0; i < games.Count; i++)
+        {
+            games[i].page.pageNumber = games[i].id;
+            games[i].page.UpdatePosition(pageOffset, generalPageOffset);
+        }
     }
 }

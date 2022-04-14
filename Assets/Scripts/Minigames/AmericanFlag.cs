@@ -80,6 +80,7 @@ public class AmericanFlag : Minigame
         shake.Begin();
 
         reachedTop = true;
+        GameManager.Instance.CompleteGame(page.pageNumber);
         StartCoroutine(CameraMovement.instance.ResetCamera(3.0f));
     }
 

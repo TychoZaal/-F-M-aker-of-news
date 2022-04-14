@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class NewspaperButton : MonoBehaviour
 {
-    [SerializeField]
     private CameraMovement cam;
 
     [SerializeField]
@@ -24,13 +23,35 @@ public class NewspaperButton : MonoBehaviour
     [SerializeField]
     public List<Image> buttonsToActivate, parentButtons;
 
+    [SerializeField]
+    private Page page;
+
+    [SerializeField]
+    private Transform cameraZoomPosition;
+
+    private void Awake()
+    {
+        cam = Camera.main.GetComponent<CameraMovement>();
+    }
+
     private void Start()
     {
         cam.allButtons.Add(GetComponent<Image>());
     }
 
+    private void Update()
+    {
+        float pageYPosition = 0;
+        if (page != null) pageYPosition = page.transform.position.y;
+
+        if (cameraZoomPosition != null)
+            cameraZoomedPosition = cameraZoomPosition.position;
+    }
+
     public void ButtonPressed()
     {
+        if (cam.isMoving) return;
+
         cam.ResetButtons(buttonsToActivate);
 
         cam.ZoomIn(cameraZoomedPosition, focus);
