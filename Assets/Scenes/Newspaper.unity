@@ -1253,10 +1253,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 856417489}
     m_Modifications:
+    - target: {fileID: 231109291157073449, guid: 87a4d2d4e8e0dfb4e9ffe06944a2d9d4, type: 3}
+      propertyPath: m_Name
+      value: TopLeftP2
+      objectReference: {fileID: 0}
+    - target: {fileID: 231109291157073451, guid: 87a4d2d4e8e0dfb4e9ffe06944a2d9d4, type: 3}
+      propertyPath: parentButtons.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 231109291157073451, guid: 87a4d2d4e8e0dfb4e9ffe06944a2d9d4, type: 3}
       propertyPath: parentButtons.Array.data[0]
       value: 
-      objectReference: {fileID: 79920735}
+      objectReference: {fileID: 231109292942464933}
     - target: {fileID: 231109291157073451, guid: 87a4d2d4e8e0dfb4e9ffe06944a2d9d4, type: 3}
       propertyPath: parentButtons.Array.data[2]
       value: 
@@ -1349,14 +1357,42 @@ PrefabInstance:
       propertyPath: m_Name
       value: SecondPage
       objectReference: {fileID: 0}
+    - target: {fileID: 231109293149861457, guid: 87a4d2d4e8e0dfb4e9ffe06944a2d9d4, type: 3}
+      propertyPath: m_Name
+      value: BottomP2
+      objectReference: {fileID: 0}
+    - target: {fileID: 231109293149861459, guid: 87a4d2d4e8e0dfb4e9ffe06944a2d9d4, type: 3}
+      propertyPath: parentButtons.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 231109293149861459, guid: 87a4d2d4e8e0dfb4e9ffe06944a2d9d4, type: 3}
       propertyPath: parentButtons.Array.data[0]
       value: 
-      objectReference: {fileID: 79920735}
+      objectReference: {fileID: 231109292942464933}
     - target: {fileID: 231109293149861459, guid: 87a4d2d4e8e0dfb4e9ffe06944a2d9d4, type: 3}
       propertyPath: parentButtons.Array.data[2]
       value: 
       objectReference: {fileID: 6140831822423829521}
+    - target: {fileID: 5575183243410519325, guid: 87a4d2d4e8e0dfb4e9ffe06944a2d9d4, type: 3}
+      propertyPath: parentButtons.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5575183243410519325, guid: 87a4d2d4e8e0dfb4e9ffe06944a2d9d4, type: 3}
+      propertyPath: parentButtons.Array.data[0]
+      value: 
+      objectReference: {fileID: 79920735}
+    - target: {fileID: 5575183243410519325, guid: 87a4d2d4e8e0dfb4e9ffe06944a2d9d4, type: 3}
+      propertyPath: parentButtons.Array.data[1]
+      value: 
+      objectReference: {fileID: 231109292942464933}
+    - target: {fileID: 5575183243410519325, guid: 87a4d2d4e8e0dfb4e9ffe06944a2d9d4, type: 3}
+      propertyPath: parentButtons.Array.data[2]
+      value: 
+      objectReference: {fileID: 6140831822423829521}
+    - target: {fileID: 5575183243410519330, guid: 87a4d2d4e8e0dfb4e9ffe06944a2d9d4, type: 3}
+      propertyPath: m_Name
+      value: PageButtonManagerP2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87a4d2d4e8e0dfb4e9ffe06944a2d9d4, type: 3}
 --- !u!114 &231109292942464933 stripped
@@ -1377,10 +1413,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 856417489}
     m_Modifications:
+    - target: {fileID: 79920733, guid: 7285cb49b41ce4b4d92855e54fe96f99, type: 3}
+      propertyPath: m_Name
+      value: PageButtonManagerP1
+      objectReference: {fileID: 0}
+    - target: {fileID: 79920735, guid: 7285cb49b41ce4b4d92855e54fe96f99, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 79920738, guid: 7285cb49b41ce4b4d92855e54fe96f99, type: 3}
       propertyPath: parentButton
       value: 
       objectReference: {fileID: 785507825}
+    - target: {fileID: 79920738, guid: 7285cb49b41ce4b4d92855e54fe96f99, type: 3}
+      propertyPath: parentButtons.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 79920738, guid: 7285cb49b41ce4b4d92855e54fe96f99, type: 3}
+      propertyPath: parentButtons.Array.data[0]
+      value: 
+      objectReference: {fileID: 79920735}
+    - target: {fileID: 79920738, guid: 7285cb49b41ce4b4d92855e54fe96f99, type: 3}
+      propertyPath: parentButtons.Array.data[1]
+      value: 
+      objectReference: {fileID: 231109292942464933}
+    - target: {fileID: 79920738, guid: 7285cb49b41ce4b4d92855e54fe96f99, type: 3}
+      propertyPath: parentButtons.Array.data[2]
+      value: 
+      objectReference: {fileID: 6140831822423829521}
     - target: {fileID: 5360513388274977684, guid: 7285cb49b41ce4b4d92855e54fe96f99, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1469,6 +1529,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: FrontPage
       objectReference: {fileID: 0}
+    - target: {fileID: 5360513388809711177, guid: 7285cb49b41ce4b4d92855e54fe96f99, type: 3}
+      propertyPath: m_Name
+      value: TopLeftP1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5360513388809711180, guid: 7285cb49b41ce4b4d92855e54fe96f99, type: 3}
+      propertyPath: parentButtons.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5360513388809711180, guid: 7285cb49b41ce4b4d92855e54fe96f99, type: 3}
       propertyPath: parentButtons.Array.data[1]
       value: 
@@ -1477,6 +1545,14 @@ PrefabInstance:
       propertyPath: parentButtons.Array.data[2]
       value: 
       objectReference: {fileID: 6140831822423829521}
+    - target: {fileID: 5360513389901062923, guid: 7285cb49b41ce4b4d92855e54fe96f99, type: 3}
+      propertyPath: m_Name
+      value: BottomP1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5360513389901062926, guid: 7285cb49b41ce4b4d92855e54fe96f99, type: 3}
+      propertyPath: parentButtons.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5360513389901062926, guid: 7285cb49b41ce4b4d92855e54fe96f99, type: 3}
       propertyPath: parentButtons.Array.data[1]
       value: 
@@ -1494,14 +1570,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 856417489}
     m_Modifications:
-    - target: {fileID: 6140831821245391366, guid: 959e24279a08b27488c4f5d40eab03a8, type: 3}
+    - target: {fileID: 2156037804448791955, guid: 959e24279a08b27488c4f5d40eab03a8, type: 3}
+      propertyPath: m_Name
+      value: PageButtonManagerP3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2156037804448791980, guid: 959e24279a08b27488c4f5d40eab03a8, type: 3}
+      propertyPath: parentButtons.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2156037804448791980, guid: 959e24279a08b27488c4f5d40eab03a8, type: 3}
       propertyPath: parentButtons.Array.data[0]
       value: 
       objectReference: {fileID: 79920735}
+    - target: {fileID: 2156037804448791980, guid: 959e24279a08b27488c4f5d40eab03a8, type: 3}
+      propertyPath: parentButtons.Array.data[1]
+      value: 
+      objectReference: {fileID: 231109292942464933}
+    - target: {fileID: 2156037804448791980, guid: 959e24279a08b27488c4f5d40eab03a8, type: 3}
+      propertyPath: parentButtons.Array.data[2]
+      value: 
+      objectReference: {fileID: 6140831822423829521}
+    - target: {fileID: 6140831821245391364, guid: 959e24279a08b27488c4f5d40eab03a8, type: 3}
+      propertyPath: m_Name
+      value: BottomP3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6140831821245391366, guid: 959e24279a08b27488c4f5d40eab03a8, type: 3}
+      propertyPath: parentButtons.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6140831821245391366, guid: 959e24279a08b27488c4f5d40eab03a8, type: 3}
+      propertyPath: parentButtons.Array.data[0]
+      value: 
+      objectReference: {fileID: 6140831822423829521}
     - target: {fileID: 6140831821245391366, guid: 959e24279a08b27488c4f5d40eab03a8, type: 3}
       propertyPath: parentButtons.Array.data[1]
       value: 
       objectReference: {fileID: 231109292942464933}
+    - target: {fileID: 6140831821245391366, guid: 959e24279a08b27488c4f5d40eab03a8, type: 3}
+      propertyPath: parentButtons.Array.data[3]
+      value: 
+      objectReference: {fileID: 6140831822423829521}
     - target: {fileID: 6140831821969401927, guid: 959e24279a08b27488c4f5d40eab03a8, type: 3}
       propertyPath: m_Name
       value: ThirdPage
@@ -1590,14 +1698,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6140831822119776611, guid: 959e24279a08b27488c4f5d40eab03a8, type: 3}
+      propertyPath: m_Name
+      value: TopLeftP3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6140831822119776613, guid: 959e24279a08b27488c4f5d40eab03a8, type: 3}
+      propertyPath: parentButtons.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6140831822119776613, guid: 959e24279a08b27488c4f5d40eab03a8, type: 3}
       propertyPath: parentButtons.Array.data[0]
       value: 
-      objectReference: {fileID: 79920735}
+      objectReference: {fileID: 6140831822423829521}
     - target: {fileID: 6140831822119776613, guid: 959e24279a08b27488c4f5d40eab03a8, type: 3}
       propertyPath: parentButtons.Array.data[1]
       value: 
       objectReference: {fileID: 231109292942464933}
+    - target: {fileID: 6140831822119776613, guid: 959e24279a08b27488c4f5d40eab03a8, type: 3}
+      propertyPath: parentButtons.Array.data[3]
+      value: 
+      objectReference: {fileID: 6140831822423829521}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 959e24279a08b27488c4f5d40eab03a8, type: 3}
 --- !u!114 &6140831822423829521 stripped

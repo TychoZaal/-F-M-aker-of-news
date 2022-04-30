@@ -54,20 +54,30 @@ public class NewspaperButton : MonoBehaviour
 
         cam.ResetButtons(buttonsToActivate);
 
+        for (int i = 0; i < buttonsToActivate.Count; i++)
+        {
+            Debug.LogError(buttonsToActivate[i].gameObject.name);
+        }
+
         cam.ZoomIn(cameraZoomedPosition, focus);
 
         if (minigame != null)
+        {
             minigame.ActivateScene();
+        }
     }
     
     public void ActivateParentButtons()
     {
         if (parentButton == null)
         {
+            Debug.LogError("No parent");
             return;
         }
 
-        cam.ZoomIn(parentButton.cameraZoomedPosition, parentButton.focus);
+        Debug.LogError("Current: " + gameObject.name);
+        cam.ZoomIn(parentButton.parentButton.cameraZoomedPosition, parentButton.parentButton.focus);
         cam.ResetButtons(parentButtons);
+        Debug.LogError("Parent: " + parentButton.parentButton.gameObject.name);
     }
 }

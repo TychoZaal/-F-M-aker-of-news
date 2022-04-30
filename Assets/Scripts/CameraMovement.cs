@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -60,11 +61,13 @@ public class CameraMovement : MonoBehaviour
         for (int i = 0; i < allButtons.Count; i++)
         {
             allButtons[i].raycastTarget = false;
+            allButtons[i].GetComponent<Button>().interactable = false;
         }
 
         for (int i = 0; i < exceptions.Count; i++)
         {
             exceptions[i].raycastTarget = true;
+            exceptions[i].GetComponent<Button>().interactable = true;
         }
     }
 
@@ -102,12 +105,24 @@ public class CameraMovement : MonoBehaviour
     {
         if (isMoving) return;
 
+        // ClearLog();
+
         StartCoroutine(MoveToPosition(transform, location, movementSpeed));
         this.focus = focus;
     }
 
+    public void ClearLog()
+    {
+        var assembly = Assembly.GetAssembly(typeof(UnityEditor.Editor));
+        var type = assembly.GetType("UnityEditor.LogEntries");
+        var method = type.GetMethod("Clear");
+        method.Invoke(new object(), null);
+    }
+
     public void ZoomOut()
     {
+        // ClearLog();
+
         if (isMoving) return;
 
         for (int i = 0; i < minigames.Count; i++)
